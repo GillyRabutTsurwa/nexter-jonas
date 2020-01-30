@@ -1,0 +1,68 @@
+.header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba($colour-secondary, 0.93)), to(rgba($colour-secondary, 0.93))), url(../img/hero.jpeg);
+    background-image: linear-gradient(rgba($colour-secondary, 0.93), rgba($colour-secondary, 0.93)), url(../img/hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    grid-column: full-start / col-end 6; // or col-start 7
+    padding: 4rem 8rem 8rem 8rem;
+
+    display: grid;
+    row-gap: 1.5rem;
+    grid-template-columns: -webkit-max-content;
+    grid-template-columns: max-content; // size of the largest piece of content
+    grid-template-rows: 1fr -webkit-min-content 6rem 1fr;
+    grid-template-rows: 1fr min-content 6rem 1fr; // and let the other rows size themselves automatically
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+
+    &__logo {
+        height: 3rem;
+        justify-self: center;
+    }
+
+    &__btn {
+        -ms-flex-item-align: start;
+        align-self: start;
+        justify-self: start;
+    }
+
+    &__seenon-text {
+        font-size: 1.6rem;
+        display: grid;
+        -webkit-column-gap: 2rem;
+                column-gap: 2rem;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        grid-template-columns: 1fr -webkit-max-content 1fr;
+        grid-template-columns: 1fr max-content 1fr;
+        color: $colour-grey-light-2;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background-color: currentColor;
+        }
+
+        &::before {}
+
+        &::before {}
+    }
+
+    &__seenon-logos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+        justify-items: center;
+
+        img {
+            height: 2.5rem;
+            -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+        }
+    }
+}

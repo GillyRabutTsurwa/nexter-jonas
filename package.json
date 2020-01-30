@@ -1,0 +1,21 @@
+{
+  "name": "Nexter",
+  "version": "1.0.0",
+  "description": "Nexter webpage",
+  "main": "index.js",
+  "scripts": {
+    "devserver": "live-server --browser=FIREFOX",
+    "start": "npm-run-all --parallel devserver gulp",
+    "gulp": "gulp serve"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "npm-run-all": "^4.1.1"
+  },
+  "dependencies": {}
+}

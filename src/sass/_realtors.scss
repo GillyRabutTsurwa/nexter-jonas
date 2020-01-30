@@ -1,0 +1,49 @@
+.realtors {
+    background-color: $colour-secondary;
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+
+    display: grid;
+    row-gap: 2rem;
+    justify-items: center;
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+
+    &__list {
+        display: grid;
+        -webkit-column-gap: 2rem;
+        column-gap: 2rem;
+        row-gap: 5vh; // For responsiveness
+        // first column is for image, the other is for text
+        // having max-content for text can help avoid line-breaks
+        grid-template-columns: -webkit-min-content -webkit-max-content;
+        grid-template-columns: min-content max-content;
+
+        -webkit-box-align: center;
+
+        -ms-flex-align: center;
+
+        align-items: center;
+
+
+
+    }
+
+    &__img {
+        width: 7rem;
+        border-radius: 50%;
+        display: block;
+        height: 100%;
+    }
+
+    &__sold {
+        text-transform: uppercase;
+        color: $colour-grey-light-2;
+        margin-top: -3px;
+    }
+}

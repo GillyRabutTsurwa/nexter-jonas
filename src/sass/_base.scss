@@ -1,0 +1,61 @@
+// COLOR VARIABLES
+$colour-primary: #c69963;
+$colour-primary-dark: #B28451;
+
+$colour-secondary: #101d2c;
+
+$colour-grey-light-1: #f9f7f6;
+$colour-grey-light-2: #aaa;
+
+$colour-grey-dark-1: #54483A;
+$colour-grey-dark-2: #6D5D4B;
+
+// FONT VARIABLES
+$font-primary: 'Nunito',
+sans-serif;
+$font-display: 'Josefin Sans',
+sans-serif;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; //10px desired pixels / 16px default pixels = 62.5%;
+}
+
+body {
+    font-family: $font-primary;
+    color: $colour-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    /*
+        Ce qu'on veut
+        1st row 80vh
+        2nd row according to smallest amount of available content ie. min-content
+            Good definition of min-content: the smallest width of a box where the box's contents don't overflow the box itself.
+
+        3rd row according to viewport width
+        4th 5th and 6th rows = min-content
+    */
+    grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [centre-start] repeat(8, [col-start] minmax(-webkit-min-content, 14rem) [col-end]) [centre-end] minmax(6rem, 1fr) [full-end];
+
+
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [centre-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [centre-end] minmax(6rem, 1fr) [full-end];
+
+}
+
+// repeat(8, minmax(min-content, 14rem)) QUESTION: what does this mean?

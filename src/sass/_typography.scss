@@ -1,0 +1,90 @@
+//NEW: EXTENDS. I GET IT.
+/*
+    So for example for heading-1; think of the selector name heading 1 being applied to 
+    where it says %heading. It is the inverse of a mixin. A mixin takes the code inside
+    it and pastes it to the selectors whereas an Extend takes the selector and pastes it
+    to the extend selector where the code is defined. I Understand
+*/
+%heading {
+    font-family: $font-display;
+    font-weight: 400;
+}
+
+.heading-1 {
+    @extend %heading;
+    font-size: 4.5rem;
+    color: $colour-grey-light-1;
+    line-height: 1;
+}
+
+.heading-2 {
+    @extend %heading;
+    font-size: 4rem;
+    font-style: italic;
+    line-height: 1;
+
+    &--light {
+        color: $colour-grey-light-1;
+    }
+
+    &--dark {
+        color: $colour-grey-dark-1;
+    }
+}
+
+.heading-3 {
+    @extend %heading;
+    font-size: 1.6rem;
+    color: $colour-primary;
+    text-transform: uppercase;
+}
+
+.heading-4 {
+    @extend %heading;
+    font-size: 1.9rem;
+
+    &--light {
+        color: $colour-grey-light-1;
+    }
+
+    &--dark {
+        color: $colour-grey-dark-1;
+    }
+}
+
+.btn {
+    background-color: $colour-primary;
+    color: #FFF;
+    border: none;
+    border-radius: 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1.8rem 3rem;
+    cursor: pointer;
+    -webkit-transition: all 0.2 ease;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $colour-primary-dark;
+    }
+}
+
+
+// Think of creating a utilities file for code below
+.mb-small {
+    margin-bottom: 2rem;
+}
+
+.mb-medium {
+    margin-bottom: 4rem;
+}
+
+.mb-large {
+    margin-bottom: 6rem;
+}
+
+.mb-huge {
+    margin-bottom: 8rem;
+}

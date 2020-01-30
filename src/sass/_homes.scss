@@ -1,0 +1,86 @@
+.homes {
+    grid-column: centre-start / centre-end;
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 7rem;
+}
+
+.home {
+    background-color: $colour-grey-light-1;
+    display: grid;
+    row-gap: 3.5rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__img {
+        width: 100%; //NEEDED
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+
+    }
+
+    &__like {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        fill: $colour-primary;
+        width: 2.5rem;
+        height: 2.5rem;
+        z-index: 1000;
+        justify-self: end; // Aligned the item on the grid cell horizontally
+        margin: 1rem;
+    }
+
+    &__name {
+
+        width: 80%;
+        justify-self: center; // aligns the item horizontally (row axis)
+        align-self: end; // aligns the item vertically (column axis)
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        z-index: 1000;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+
+        font-family: $font-display;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 1.25rem;
+        background-color: $colour-secondary;
+        color: #FFF;
+        font-weight: 400;
+
+    }
+
+    &__location,
+    &__rooms {
+        margin-top: 2.5rem;
+    }
+
+    &__location,
+    &__rooms,
+    &__area,
+    &__price {
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+
+
+        svg {
+            fill: $colour-primary;
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+        }
+    }
+
+    &__btn {
+        grid-column: 1 / -1;
+    }
+}

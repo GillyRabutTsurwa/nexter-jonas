@@ -1,0 +1,43 @@
+.features {
+    grid-column: centre-start / centre-end;
+
+    margin: 15rem 0;
+    gap: 6rem;
+
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr); // old column definition
+    //auto-fit, creates as many as tracks as possible of the defined with
+    // our defined with will stay between 25rem and 1fr with the minmax()
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    // we are not defining the rows, ils seront defini sous-entendument
+
+}
+
+.feature {
+    display: grid;
+    row-gap: 1.5rem;
+    -webkit-column-gap: 2.5rem;
+    column-gap: 2.5rem;
+    grid-template-columns: -webkit-min-content 1fr;
+    grid-template-columns: min-content 1fr;
+    // If you want rows to be the size of the content, there is NO NEED to define them. I am understanding CSS Grids
+    // You don't really define the rows, but define the columns. In most cases, let the content, define the rows
+
+    &__icon {
+        fill: $colour-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        //grid-row: 1 / -1; // VA PAS marcher, -1 is for Explicit grid lines. -1 only works with explicit grid, but we have an implicit grid, because rows were not defined. The content is taking care of row definition
+        grid-row: 1 / span 2;
+        -webkit-transform: translateY(-1rem);
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
